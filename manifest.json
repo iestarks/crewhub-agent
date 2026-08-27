@@ -1,0 +1,20 @@
+{
+  "name": "CrewHub Security Triage Agent",
+  "display_name": "CrewHub-AgentsTriage",
+  "repo": "iestarks/crewhub-agent",
+  "home": "iestarks/crewhub-agent",
+  "entry": "crewhub_agent.py",
+  "llm": "openai:gpt-4o",
+  "identity_type": "DeclaredAgent",
+  "app_id": "crewhub-agents-triage",
+  "object_id": "crewhub-agents-triage",
+  "blueprint_id": "bp-crewhub-1",
+  "owners": ["agent-team@contoso.com"],
+  "sponsors": ["agent-team@contoso.com"],
+  "credential_type": "federated",
+  "created_on": "2026-08-27T00:00:00Z",
+  "agent_identity": true,
+  "app_roles": ["SecurityAudit.Read.All"],
+  "fic_subjects": ["github-actions"],
+  "delegated_grants": []
+}

@@ -1,0 +1,12 @@
+# CrewAI / LLM agent runtime
+crewai>=0.100
+openai>=1.0
+
+# Local state
+__pycache__/
+*.py[cod]
+.crew_output/
+.crewai/
+.env
+.envrc
+crew_output/
