@@ -1,0 +1,22 @@
+{
+  "name": "CrewHub Security Triage Agent",
+  "display_name": "CrewHub-AgentsTriage",
+  "repo": "iestarks/crewhub-agent",
+  "home": "iestarks/crewhub-agent",
+  "entry": "crewhub_agent.graph:build_graph",
+  "framework": "langgraph",
+  "llm": "openai:gpt-4o",
+  "identity_type": "DeclaredAgent",
+  "entra_identity": false,
+  "app_id": "3e694bb8-50af-4ecc-808f-71d2adf0a3d7",
+  "object_id": "0d99b53f-65c4-4fd1-93f0-e9032271eca7",
+  "blueprint_id": "bp-crewhub-1",
+  "owners": ["irvstarks@outlook.com"],
+  "sponsors": ["irvstarks@outlook.com"],
+  "credential_type": "federated",
+  "created_on": "2026-08-28T00:00:00Z",
+  "agent_identity": true,
+  "app_roles": ["SecurityAudit.Read.All"],
+  "fic_subjects": ["github-actions"],
+  "delegated_grants": []
+}
