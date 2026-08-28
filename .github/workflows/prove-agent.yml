@@ -1,0 +1,45 @@
+name: Prove Agent (LangGraph)
+
+# The repo proves on every push that it contains a FUNCTIONING agent, not just
+# an "agent account": the LangGraph graph runs, the prove_agency node executes,
+# and the regenerated manifest must byte-match the committed one (tamper
+# evidence) before the recorded agency digest is verified.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install agent runtime
+        run: pip install langgraph
+
+      - name: Run the agent (LangGraph) — regenerate manifest
+        run: python -m crewhub_agent.prove manifest.json
+
+      - name: Tamper evidence — regenerated manifest must match committed
+        run: |
+          git diff --exit-code manifest.json \
+            || { echo '::error::manifest.json is stale or tampered — run `python -m crewhub_agent.prove` and commit'; exit 1; }
+
+      - name: Verify agency proof
+        run: python -m crewhub_agent.verify manifest.json
+
+      - name: Upload manifest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: manifest
+          path: manifest.json
+          retention-days: 90
