@@ -37,6 +37,20 @@
       "load_declaration",
       "prove_agency",
       "emit_manifest"
+    ],
+    "trail": [
+      {
+        "node": "load_declaration",
+        "detail": "declaration.json -> CrewHub-AgentsTriage"
+      },
+      {
+        "node": "prove_agency",
+        "detail": "prove_agency() executed -> sha256"
+      },
+      {
+        "node": "emit_manifest",
+        "detail": "manifest.json written (deterministic)"
+      }
     ]
   }
 }

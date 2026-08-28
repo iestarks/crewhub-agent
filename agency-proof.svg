@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="608" viewBox="0 0 920 608" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <rect width="920" height="608" fill="#ffffff"/>
+  <rect width="920" height="96" fill="#0f172a"/>
+  <text x="36" y="44" fill="#f8fafc" font-size="24" font-weight="700">Agency Proof Certificate — CrewHub-AgentsTriage</text>
+  <text x="36" y="72" fill="#94a3b8" font-size="13" font-family="Menlo,Consolas,monospace">LangGraph StateGraph execution · python -m crewhub_agent.prove</text>
+  <text x="884" y="44" text-anchor="end" fill="#94a3b8" font-size="12">framework: langgraph</text>
+  <text x="884" y="64" text-anchor="end" fill="#94a3b8" font-size="12">app_id: 3e694bb8-50af-4ecc-808f-71d2adf0a3d7</text>
+  <text x="36" y="122" fill="#64748b" font-size="11" letter-spacing="1">GRAPH NODES EXECUTED</text>
+  <rect x="36" y="132" width="256" height="112" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="64" cy="164" r="13" fill="#16a34a"/>
+  <path d="M 58 164 l 4.5 5 l 8 -10" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="86" y="160" fill="#64748b" font-size="10" letter-spacing="1">STEP 1 · RAN ✓</text>
+  <text x="86" y="178" fill="#0f172a" font-size="15" font-weight="600" font-family="Menlo,Consolas,monospace">load_declaration</text>
+  <text x="56" y="206" fill="#64748b" font-size="11">declaration.json -&gt; CrewHub-AgentsTriage</text>
+  <line x1="296" y1="188" x2="318" y2="188" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="330,188 319,182 319,194" fill="#94a3b8"/>
+  <rect x="332" y="132" width="256" height="112" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="360" cy="164" r="13" fill="#16a34a"/>
+  <path d="M 354 164 l 4.5 5 l 8 -10" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="382" y="160" fill="#64748b" font-size="10" letter-spacing="1">STEP 2 · RAN ✓</text>
+  <text x="382" y="178" fill="#0f172a" font-size="15" font-weight="600" font-family="Menlo,Consolas,monospace">prove_agency</text>
+  <text x="352" y="206" fill="#64748b" font-size="11">prove_agency() executed -&gt; sha256</text>
+  <line x1="592" y1="188" x2="614" y2="188" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="626,188 615,182 615,194" fill="#94a3b8"/>
+  <rect x="628" y="132" width="256" height="112" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="656" cy="164" r="13" fill="#16a34a"/>
+  <path d="M 650 164 l 4.5 5 l 8 -10" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="678" y="160" fill="#64748b" font-size="10" letter-spacing="1">STEP 3 · RAN ✓</text>
+  <text x="678" y="178" fill="#0f172a" font-size="15" font-weight="600" font-family="Menlo,Consolas,monospace">emit_manifest</text>
+  <text x="648" y="206" fill="#64748b" font-size="11">manifest.json written (deterministic)</text>
+  <rect x="36" y="276" width="848" height="140" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="56" y="302" fill="#16a34a" font-size="11" font-weight="700" letter-spacing="1">FUNCTION EXECUTED — prove_agency(app_id, framework, challenge)</text>
+  <text x="56" y="326" fill="#0f172a" font-size="13" font-family="Menlo,Consolas,monospace">prove_agency(</text>
+  <text x="76" y="344" fill="#0f172a" font-size="13" font-family="Menlo,Consolas,monospace">app_id     = "3e694bb8-50af-4ecc-808f-71d2adf0a3d7",</text>
+  <text x="76" y="362" fill="#0f172a" font-size="13" font-family="Menlo,Consolas,monospace">framework  = "langgraph",</text>
+  <text x="76" y="380" fill="#0f172a" font-size="13" font-family="Menlo,Consolas,monospace">challenge  = "siem-soar:agency:v1",</text>
+  <text x="56" y="402" fill="#0f172a" font-size="13" font-family="Menlo,Consolas,monospace">)  →  sha256 hex digest</text>
+  <rect x="36" y="432" width="848" height="54" rx="10" fill="#ecfdf5" stroke="#16a34a"/>
+  <text x="56" y="453" fill="#047857" font-size="10" letter-spacing="1">DIGEST (PUBLIC, NON-SECRET)</text>
+  <text x="56" y="473" fill="#065f46" font-size="13" font-family="Menlo,Consolas,monospace">sha256:80acee411abba066b4d021ce42f80099139eabc453b8d108136777d78fb02f0e</text>
+  <circle cx="70" cy="538" r="22" fill="#16a34a"/>
+  <path d="M 59 538 l 8 8 l 14 -16" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="108" y="536" fill="#16a34a" font-size="16" font-weight="700">VERIFIED — agency function re-executed, digest matched</text>
+  <text x="108" y="556" fill="#64748b" font-size="12">self-recomputed as sha256(app_id | challenge | framework) · engine: langgraph</text>
+  <text x="36" y="592" fill="#94a3b8" font-size="11">deterministic artifact · regenerate: python -m crewhub_agent.prove · iestarks/crewhub-agent · entry crewhub_agent.graph:build_graph</text>
+</svg>

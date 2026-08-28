@@ -22,18 +22,28 @@ class AgentState(TypedDict):
     declaration: Dict[str, Any]
     digest: str
     manifest: Dict[str, Any]
+    trail: list  # per-node execution evidence (deterministic)
 
 
 def load_declaration_node(state: AgentState) -> Dict[str, Any]:
     path = os.environ.get("CREWHUB_DECLARATION", DECLARATION_PATH)
-    return {"declaration": load_declaration(path)}
+    d = load_declaration(path)
+    trail = list(state.get("trail", [])) + [{
+        "node": "load_declaration",
+        "detail": f"declaration.json -> {d.get('display_name', '')}",
+    }]
+    return {"declaration": d, "trail": trail}
 
 
 def prove_agency_node(state: AgentState) -> Dict[str, Any]:
     d = state["declaration"]
     digest = prove_agency(d["app_id"], d.get("framework", "langgraph"),
                           AGENCY_CHALLENGE)
-    return {"digest": digest}
+    trail = list(state.get("trail", [])) + [{
+        "node": "prove_agency",
+        "detail": "prove_agency() executed -> sha256",
+    }]
+    return {"digest": digest, "trail": trail}
 
 
 def emit_manifest_node(state: AgentState) -> Dict[str, Any]:
@@ -66,6 +76,10 @@ def emit_manifest_node(state: AgentState) -> Dict[str, Any]:
             "executed": True,
             "engine": "langgraph",
             "nodes": NODES,
+            "trail": list(state.get("trail", [])) + [{
+                "node": "emit_manifest",
+                "detail": "manifest.json written (deterministic)",
+            }],
         },
     }
     return {"manifest": manifest}

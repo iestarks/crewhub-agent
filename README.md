@@ -12,7 +12,12 @@ The graph's `prove_agency` node **runs the agency function** at build time:
 digest = sha256("{app_id}|siem-soar:agency:v1|{framework}")   # recorded as "sha256:<hex>"
 ```
 
-and emits `manifest.json` — the declaration siem-soar fetches, verifies, and
+and emits `manifest.json` plus **`agency-proof.svg`** — a deterministic visual
+"execution certificate" (the graph nodes that ran with ✓, the exact
+`prove_agency(...)` call, the digest, and a VERIFIED seal). Rendered by the
+agent itself; a pure function of the declaration, so CI tamper-checks it with
+`git diff` like the manifest. siem-soar fetches the manifest, verifies the
+proof, and
 cross-checks against the actual Microsoft Entra tenant (appId match ->
 `tenant_verified` / high confidence; no match -> `provisioning_unverified` /
 low confidence).
