@@ -35,6 +35,12 @@ CI (`.github/workflows/prove-agent.yml`) runs the agent on every push, asserts
 the regenerated manifest byte-matches the committed one (tamper evidence), and
 verifies the agency proof.
 
+The declaration's `launcher` block (also carried in `manifest.json`) makes
+this agent launchable from the USEA Agent Launcher UI: its **Dry run** mode
+runs the triage CLI above through USEA's `POST /v1/agents/launch` (live mode
+is not offered — the triage CLI has no live variant). See the siem-soar
+README ("Declared Agents") for the launcher contract and trust boundary.
+
 ## Entra identity
 
 | Field | Value |
