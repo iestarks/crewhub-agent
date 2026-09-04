@@ -69,6 +69,7 @@ def emit_manifest_node(state: AgentState) -> Dict[str, Any]:
         "app_roles": d.get("app_roles", []),
         "fic_subjects": d.get("fic_subjects", []),
         "delegated_grants": d.get("delegated_grants", []),
+        "launcher": d.get("launcher"),
         "agency_proof": {
             "function": "prove_agency",
             "challenge": AGENCY_CHALLENGE,

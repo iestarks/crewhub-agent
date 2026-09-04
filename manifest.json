@@ -27,6 +27,15 @@
     "github-actions"
   ],
   "delegated_grants": [],
+  "launcher": {
+    "type": "cli",
+    "module": "crewhub_agent.triage",
+    "command": "python -m crewhub_agent.triage --findings identities-run.csv --dry-run",
+    "offline": true,
+    "dry_run": true,
+    "location": "crewhub-agent/",
+    "purpose": "Prioritize a siem-soar agent-discovery inventory (identities-*.csv) into triage tickets. --dry-run needs no LLM or API key."
+  },
   "agency_proof": {
     "function": "prove_agency",
     "challenge": "siem-soar:agency:v1",
